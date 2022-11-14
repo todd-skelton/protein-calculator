@@ -38,7 +38,9 @@ export default function App() {
   const { rda, goodMin, optimalMin, highMin } = getProteinFromHeight(feetAndInchesToMeters(heightFt, heightIn));
 
   return (
-    <>
+    <Stack spacing={2}>
+      <Typography variant="h1">Protein Calculator</Typography>
+      <Typography variant="body1">Height</Typography>
       <Stack direction="row" spacing={2}>
         <Autocomplete
           disablePortal
@@ -68,7 +70,7 @@ export default function App() {
             <TimelineDot color="error" />
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent><Tooltip title="Recommended Dietary Allowances (RDAs) are the levels of intake of essential nutrients that, on the basis of scientific knowledge, are judged by the Food and Nutrition Board to be adequate to meet the known nutrient needs of practically all healthy persons."><span>RDA</span></Tooltip></TimelineContent>
+          <TimelineContent></TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineSeparator>
@@ -118,6 +120,6 @@ export default function App() {
           <TimelineContent></TimelineContent>
         </TimelineItem>
       </Timeline>
-    </>
+    </Stack>
   );
 }
