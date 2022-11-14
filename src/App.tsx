@@ -1,5 +1,5 @@
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from "@mui/lab";
-import { Autocomplete, Stack, TextField, Tooltip, Typography } from "@mui/material";
+import { Autocomplete, Stack, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 
 const OPTIMAL_BMI = 21.5;
@@ -39,7 +39,7 @@ export default function App() {
 
   return (
     <Stack spacing={2}>
-      <Typography variant="h1">Protein Calculator</Typography>
+      <Typography variant="h2">Protein Calculator</Typography>
       <Typography variant="body1">Height</Typography>
       <Stack direction="row" spacing={2}>
         <Autocomplete
