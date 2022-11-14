@@ -1,5 +1,6 @@
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from "@mui/lab";
 import { Autocomplete, Stack, TextField, Typography } from "@mui/material";
+import { Analytics } from '@vercel/analytics/react';
 import { useState } from "react";
 
 const OPTIMAL_BMI = 21.5;
@@ -120,6 +121,7 @@ export default function App() {
           <TimelineContent></TimelineContent>
         </TimelineItem>
       </Timeline>
+      <Analytics />
     </Stack>
   );
 }
