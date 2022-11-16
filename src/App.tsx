@@ -1,5 +1,5 @@
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from "@mui/lab";
-import { Autocomplete, Stack, TextField, Typography } from "@mui/material";
+import { Autocomplete, Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { Analytics } from '@vercel/analytics/react';
 import { useState } from "react";
 
@@ -36,11 +36,14 @@ const heightInOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 export default function App() {
   const [heightFt, setHeightFt] = useState(5);
   const [heightIn, setHeightIn] = useState(9);
+  const [showLow, setShowLow] = useState(false);
+  const [showGood, setShowGood] = useState(false);
+  const [showOptimal, setShowOptimal] = useState(false);
   const { rda, goodMin, optimalMin, highMin } = getProteinFromHeight(feetAndInchesToMeters(heightFt, heightIn));
 
   return (
     <Stack spacing={2}>
-      <Typography variant="h2">Protein Calculator</Typography>
+      <Typography variant="h3">Protein Calculator</Typography>
       <Typography variant="body1">Height</Typography>
       <Stack direction="row" spacing={2}>
         <Autocomplete
@@ -77,8 +80,17 @@ export default function App() {
           <TimelineSeparator>
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Low</TimelineContent>
+          <TimelineContent>
+            <Button color="warning" onClick={() => setShowLow(!showLow)}>Low</Button>
+          </TimelineContent>
         </TimelineItem>
+        {showLow && <TimelineItem>
+          <Box justifyContent="center" width="100%" display="flex">
+            <Typography variant="body1" maxWidth={500}>
+              The low range of protein intake spans from the RDA up to around 1.2 grams per kilogram (normalized to height). Many will recognize the RDA as the optimal intake of protein. This is incorrect. The RDA is the minimum amount of protein required to prevent clinical deficiency. It should not be your goal. You are unlikely to retain lean mass at this level—especially in an energy deficit.
+            </Typography>
+          </Box>
+        </TimelineItem>}
         <TimelineItem>
           <TimelineOppositeContent>
             {goodMin.toFixed(0)}g
@@ -93,8 +105,17 @@ export default function App() {
           <TimelineSeparator>
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Good</TimelineContent>
+          <TimelineContent>
+            <Button color="info" onClick={() => setShowGood(!showGood)}>Good</Button>
+          </TimelineContent>
         </TimelineItem>
+        {showGood && <TimelineItem>
+          <Box justifyContent="center" width="100%" display="flex">
+            <Typography variant="body1" maxWidth={500}>
+              The current body of evidence shows a good range of protein intake spans from around 1.2 grams per kilogram up to around 1.6 grams per kilogram (normalized to height). This is the range that most people will be able to retain lean mass while at maintenance. However, it will be difficult to retain lean mass in an energy deficit in this range.
+            </Typography>
+          </Box>
+        </TimelineItem>}
         <TimelineItem>
           <TimelineOppositeContent>
             {optimalMin.toFixed(0)}g
@@ -109,8 +130,17 @@ export default function App() {
           <TimelineSeparator>
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Optimal</TimelineContent>
+          <TimelineContent>
+            <Button color="success" onClick={() => setShowOptimal(!showOptimal)}>Optimal</Button>
+          </TimelineContent>
         </TimelineItem>
+        {showOptimal && <TimelineItem>
+          <Box justifyContent="center" width="100%" display="flex">
+            <Typography variant="body1" maxWidth={500}>
+              The optimal range of protein intake spans from around 1.6 grams per kilogram up to around 2.2 grams per kilogram (normalized to height). This is the range that most people will be able to retain lean mass while in an energy deficit. It is also the range that most people will be able to gain lean mass while in an energy surplus. Going above this range will not provide any additional benefit.
+            </Typography>
+          </Box>
+        </TimelineItem>}
         <TimelineItem>
           <TimelineOppositeContent>
             {highMin.toFixed(0)}g
