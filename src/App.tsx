@@ -88,7 +88,7 @@ export default function App() {
         {showLow && <TimelineItem>
           <Box justifyContent="center" width="100%" display="flex">
             <Typography variant="body1" maxWidth={500}>
-              The low range of protein intake spans from the RDA up to around 1.2 grams per kilogram (normalized to height). Many will recognize the RDA as the optimal intake of protein. This is incorrect. The RDA is the minimum amount of protein required to prevent clinical deficiency. It should not be your goal. You are unlikely to retain lean mass at this level—especially in an energy deficit.
+              The low range of protein intake spans from the RDA up to around 1.2 grams per kilogram (normalized to height here). Many will recognize the RDA as the optimal intake of protein. This is incorrect. The RDA is the minimum amount of protein required to prevent clinical deficiency. It should not be your goal. You are unlikely to retain lean mass at this level—especially in an energy deficit.
             </Typography>
           </Box>
         </TimelineItem>}
@@ -113,7 +113,7 @@ export default function App() {
         {showGood && <TimelineItem>
           <Box justifyContent="center" width="100%" display="flex">
             <Typography variant="body1" maxWidth={500}>
-              The current body of evidence shows a good range of protein intake spans from around 1.2 grams per kilogram up to around 1.6 grams per kilogram (normalized to height). This is the range that most people will be able to retain lean mass while at maintenance. However, it will be difficult to retain lean mass in an energy deficit in this range.
+              The current body of evidence shows a good range of protein intake spans from around 1.2 grams per kilogram up to around 1.6 grams per kilogram (normalized to height here). This is the range that most people will be able to retain lean mass while at maintenance. However, it will be difficult to retain lean mass in an energy deficit in this range.
             </Typography>
           </Box>
         </TimelineItem>}
@@ -138,7 +138,7 @@ export default function App() {
         {showOptimal && <TimelineItem>
           <Box justifyContent="center" width="100%" display="flex">
             <Typography variant="body1" maxWidth={500}>
-              The optimal range of protein intake spans from around 1.6 grams per kilogram up to around 2.2 grams per kilogram (normalized to height). This is the range that most people will be able to retain lean mass while in an energy deficit. It is also the range that most people will be able to gain lean mass while in an energy surplus. Going above this range will not provide any additional benefit.
+              The optimal range of protein intake spans from around 1.6 grams per kilogram up to around 2.2 grams per kilogram (normalized to height here). This is the range that most people will be able to retain lean mass while in an energy deficit. It is also the range that most people will be able to gain lean mass while in an energy surplus. Going above this range will not provide any additional benefit.
             </Typography>
           </Box>
         </TimelineItem>}
