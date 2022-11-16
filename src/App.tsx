@@ -1,3 +1,4 @@
+import HelpIcon from '@mui/icons-material/Help';
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from "@mui/lab";
 import { Autocomplete, Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { Analytics } from '@vercel/analytics/react';
@@ -81,7 +82,7 @@ export default function App() {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <Button color="warning" onClick={() => setShowLow(!showLow)}>Low</Button>
+            <Button color="warning" onClick={() => setShowLow(!showLow)} endIcon={<HelpIcon />}>Low</Button>
           </TimelineContent>
         </TimelineItem>
         {showLow && <TimelineItem>
@@ -106,7 +107,7 @@ export default function App() {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <Button color="info" onClick={() => setShowGood(!showGood)}>Good</Button>
+            <Button color="info" onClick={() => setShowGood(!showGood)} endIcon={<HelpIcon />}>Good</Button>
           </TimelineContent>
         </TimelineItem>
         {showGood && <TimelineItem>
@@ -131,7 +132,7 @@ export default function App() {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <Button color="success" onClick={() => setShowOptimal(!showOptimal)}>Optimal</Button>
+            <Button color="success" onClick={() => setShowOptimal(!showOptimal)} endIcon={<HelpIcon />}>Optimal</Button>
           </TimelineContent>
         </TimelineItem>
         {showOptimal && <TimelineItem>
